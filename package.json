@@ -1,0 +1,20 @@
+{
+  "name": "mini-ia",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Mini IA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chikeluba Anusionwu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
+  }
+}
