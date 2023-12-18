@@ -1,7 +1,7 @@
-import {Schema, Model} from "mongoose"
-import Visit from "../controllers/visitation"
-import Patient from "../controllers/patient"
-import Vitals from "../controllers/vitals"
+import {Schema, model} from "mongoose"
+// import { Visit } from "../controllers/visitation.js"
+// import { Patient } from "../controllers/patient.js"
+// import { Vitals } from "../controllers/vitals.js"
 
 
 
@@ -38,8 +38,8 @@ const vitalsSchema = new Schema({
     SP02: String
 })
 
-export const visitationModel = Model(Visit , "Vitals")
-export const vitalsModel = Model(Vitals, "Vitals")
-export const patientModel = Model(Patient, "Patient")
+export const visitationModel = model("Visit", visitationSchema)
+export const vitalsModel = model("Vitals", vitalsSchema)
+export const patientModel = model("Patient", patientSchema)
 
-module.exports = {visitationModel, vitalsModel, patientModel}
+// module.exports = {visitationModel, vitalsModel, patientModel}

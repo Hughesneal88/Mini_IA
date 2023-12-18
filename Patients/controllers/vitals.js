@@ -1,4 +1,4 @@
-import vitalsModel from "../models/patients"
+import { vitalsModel } from "../models/patients.js"
 
 export const createVitals = (req, res) => {
     let {
@@ -11,4 +11,4 @@ export const createVitals = (req, res) => {
 
     const Visit = new vitalsModel()
 }
-module.exports = createVitals
+// module.exports = createVitals

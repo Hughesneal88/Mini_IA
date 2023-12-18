@@ -1,12 +1,24 @@
-import createPatient from "../controllers/patient.js"
+import express from 'express';
+import { createPatient } from "../controllers/patient.js";
 
 
-const express = require('express')
-export const patientRouter = express.Router()
+export const router = express.Router();
 
-patientRouter.post("/addPatients", createPatient).get("/Patients", (req, res) => res.send(req.body))
-patientRouter.delete("/Patients", createPatient).get("/Patients", (req, res) => res.send(req.body))
+router.post("/addPatients", createPatient);
 
+router.get("/getPatient/:id", async (req, res) => {
+    let data = await Model.findbyId(req.params.id);
+    res.json(data);
+});
 
-module.exports = patientRouter
+router.get('/getAllPatients', async (req, res) => {
+    let data = await Model.find();
+    res.json(data);
+});
 
+router.post("/deletePatient/:id", async (req, res) => {
+    Model.remove({_id: req.params.id}, function(err){res.send("Internal Server Error", 500)}),
+    res.send(200);
+});
+
+// module.exports = router;

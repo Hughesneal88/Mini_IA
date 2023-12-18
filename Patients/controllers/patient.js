@@ -1,4 +1,4 @@
-import patientModel from "../models/patients"
+import { patientModel }  from "../models/patients.js"
 export const createPatient = (req, res) => {
     let {
         patientID, 
@@ -12,4 +12,4 @@ export const createPatient = (req, res) => {
     } = req.body
     const Patient = new patientModel()
 }
-module.exports = createPatient
+//  module.exports = createPatient
